@@ -284,7 +284,7 @@
   document.getElementById('shareBtn').addEventListener('click', async () => {
     const data = {
       title: 'Pinky & Shivam · Shubh Vivah',
-      text: 'You are cordially invited to the wedding celebrations of Pinky Ojha & Shivam Ojha · 28–30 November 2026',
+      text: 'You are cordially invited to the wedding celebrations of Pinky & Shivam · 28–30 November 2026',
       url: location.href,
     };
     if (navigator.share) {
