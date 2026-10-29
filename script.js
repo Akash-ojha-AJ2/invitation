@@ -256,7 +256,7 @@
   }
 
   /* ---------- Countdown ---------- */
-  const target = new Date(2026, 10, 25, 0, 0, 0).getTime(); // 25 Nov 2026
+  const target = new Date(2026, 10, 28, 0, 0, 0).getTime(); // 28 Nov 2026
   const end = new Date(2026, 10, 30, 23, 59, 59).getTime();
   const pad = n => String(n).padStart(2, '0');
   const el = id => document.getElementById(id);
@@ -284,7 +284,7 @@
   document.getElementById('shareBtn').addEventListener('click', async () => {
     const data = {
       title: 'Pinky & Shivam · Shubh Vivah',
-      text: 'You are cordially invited to the wedding celebrations of Pinky Ojha & Shivam Ojha · 25–30 November 2026',
+      text: 'You are cordially invited to the wedding celebrations of Pinky Ojha & Shivam Ojha · 28–30 November 2026',
       url: location.href,
     };
     if (navigator.share) {
