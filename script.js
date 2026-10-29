@@ -94,7 +94,7 @@
   });
 
   /* ---------- Intro: open the envelope ---------- */
-  window.scrollTo(0, 0);
+  document.getElementById('pages').scrollTo(0, 0);
   openBtn.addEventListener('click', () => {
     if (intro.classList.contains('opening')) return;
     intro.classList.add('opening');          // seal lifts, flap folds back

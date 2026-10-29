@@ -24,11 +24,8 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html {
-  scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
-  -webkit-text-size-adjust: 100%;
-}
+html, body { height: 100%; overflow: hidden; }
+html { -webkit-text-size-adjust: 100%; }
 body {
   font-family: var(--f-serif);
   color: var(--ink);
@@ -37,7 +34,15 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
-body.locked { overflow: hidden; height: 100vh; }
+/* the pages scroll inside their own fixed, full-screen box (not the document), so the
+   mobile browser toolbar never hides and the screen height stays the same while swiping */
+#pages {
+  position: fixed; inset: 0; z-index: 1;
+  overflow-x: hidden; overflow-y: auto; overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth; scroll-snap-type: y mandatory;
+}
+body.locked #pages { overflow: hidden; }
 button { font: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
 figure { margin: 0; }
 
@@ -226,7 +231,7 @@ body.last-page .next-hint { opacity: 0; pointer-events: none; }
 /* ============ PAGES ============ */
 .page {
   position: relative; overflow: hidden;
-  min-height: 100vh; min-height: 100svh;
+  height: 100%;
   scroll-snap-align: start; scroll-snap-stop: always;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   text-align: center;
@@ -523,6 +528,6 @@ body.last-page .next-hint { opacity: 0; pointer-events: none; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; }
-  html { scroll-behavior: auto; }
+  #pages { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; filter: none; }
 }
