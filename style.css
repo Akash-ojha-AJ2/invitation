@@ -231,7 +231,8 @@ body.last-page .next-hint { opacity: 0; pointer-events: none; }
 /* ============ PAGES ============ */
 .page {
   position: relative; overflow: hidden;
-  height: 100%;
+  /* at least one screen tall; a page with more content grows instead of being cut off */
+  min-height: 100%;
   scroll-snap-align: start; scroll-snap-stop: always;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   text-align: center;
@@ -436,6 +437,19 @@ body.last-page .next-hint { opacity: 0; pointer-events: none; }
 .venue-page .venue-icon { width: 30px; height: 30px; margin-bottom: 2px; }
 .venue-page .venue-addr { margin: 4px 0 10px; }
 .venue-page .share-btn { margin-top: 18px; }
+@media (max-width: 680px) {
+  .page.venue-page { padding-top: 44px; padding-bottom: 48px; }
+  .venue-page .sec-title { margin-bottom: 12px; }
+  .venue-page .nb { padding: 12px 14px 14px; }
+  .venue-page .venue-addr { font-size: 16px; line-height: 1.4; margin: 2px 0 8px; }
+  .venue-page .map-btn { padding-top: 8px; padding-bottom: 8px; }
+  .venue-page .contact { margin-top: 12px; }
+  .venue-page .share-btn { margin-top: 14px; padding: 12px 30px; }
+}
+@media (max-width: 680px) and (max-height: 760px) {
+  .page.venue-page, .page.footer { padding-top: 36px; padding-bottom: 36px; }
+  .venue-page .venue-icon { display: none; }
+}
 
 /* ============ CONTACT (venues page) ============ */
 .contact { margin-top: 18px; }
