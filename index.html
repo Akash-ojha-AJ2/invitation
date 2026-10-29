@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Pinky & Shivam · Wedding Invitation</title>
+  <meta name="description" content="Wedding invitation of Pinky Ojha & Shivam Ojha · 25 – 30 November 2026">
+  <meta name="theme-color" content="#f5f7ee">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="locked">
+
+  <!-- ============ INTRO: ENVELOPE ============ -->
+  <div id="intro" class="intro">
+    <div class="sparkles" id="sparkles" aria-hidden="true"></div>
+    <svg class="sprig sprig-tl" viewBox="0 0 220 220" aria-hidden="true"></svg>
+    <svg class="sprig sprig-br" viewBox="0 0 220 220" aria-hidden="true"></svg>
+
+    <div class="intro-inner">
+      <p class="intro-kicker">Together with their families</p>
+      <h1 class="intro-names">Pinky <em>&amp;</em> Shivam</h1>
+      <p class="intro-sub">request the pleasure of your company</p>
+
+      <div class="envelope" id="envelope">
+        <div class="env-back"></div>
+        <div class="letter">
+          <p class="letter-small">Save the Date</p>
+          <p class="letter-mono">P<span>&amp;</span>S</p>
+          <p class="letter-date">25 · 11 · 2026</p>
+        </div>
+        <div class="env-front"><div class="env-left"></div><div class="env-right"></div><div class="env-bottom"></div></div>
+        <div class="env-flap"><div></div></div>
+        <button id="openBtn" class="seal" aria-label="Open invitation">
+          <span>P<i>&amp;</i>S</span>
+        </button>
+      </div>
+
+      <p class="intro-date">25 — 30 November 2026</p>
+      <p class="tap">Tap the seal to open</p>
+    </div>
+  </div>
+
+  <canvas id="petals" aria-hidden="true"></canvas>
+
+  <nav class="dots" id="dots" aria-label="Pages"></nav>
+  <button class="next-hint" id="nextHint" aria-label="Next page">
+    <span>Scroll</span><i></i>
+  </button>
+
+  <button id="musicBtn" class="music-btn" aria-label="Toggle music" hidden>
+    <span class="bars"><i></i><i></i><i></i><i></i></span>
+  </button>
+  <audio id="bgMusic" src="music.mp3" loop preload="none"></audio>
+
+  <main id="pages">
+
+    <!-- 1 · HERO -->
+    <section class="page dark hero" data-label="Welcome">
+
+      <div class="hero-content">
+        <div class="wreath reveal">
+          <svg id="wreath" viewBox="-110 -110 220 220" aria-hidden="true"></svg>
+          <span class="mono">P<i>&amp;</i>S</span>
+        </div>
+        <p class="kicker reveal">Together with their families</p>
+        <h2 class="hero-names">
+          <span class="reveal">Pinky</span>
+          <em class="reveal">&amp;</em>
+          <span class="reveal">Shivam</span>
+        </h2>
+        <p class="lined reveal"><span>are getting married</span></p>
+        <div class="date-row reveal">
+          <span>November</span>
+          <b>25 — 30</b>
+          <span>2026</span>
+        </div>
+        <p class="hero-place reveal">Gwalior · Madhya Pradesh</p>
+      </div>
+    </section>
+
+    <!-- 2 · INVITATION -->
+    <section class="page paper invite" data-label="Invitation">
+      <div class="card">
+        <p class="kicker reveal">With the blessings of</p>
+        <p class="invite-strong reveal">Late Mr. Ram Prakash Ojha</p>
+        <p class="invite-text reveal">Mrs. Shakuntala Ojha<br>requests the honour of your presence<br>at the marriage of her daughter</p>
+        <h3 class="script-name reveal">Pinky Ojha</h3>
+        <p class="caps small reveal">to</p>
+        <h3 class="script-name reveal">Shivam Ojha</h3>
+        <div class="rule reveal"><span></span><b></b><span></span></div>
+        <p class="invite-text reveal">Celebrations from the 25<sup>th</sup> to the 30<sup>th</sup> of November, 2026</p>
+      </div>
+    </section>
+
+    <!-- 4 · COUNTDOWN -->
+    <section class="page dark countdown-sec" data-label="Countdown">
+      <h2 class="sec-title reveal"><small>Save the Date</small>Counting the Days</h2>
+      <div class="countdown">
+        <div class="reveal"><b id="cd-d">00</b><span>Days</span></div>
+        <div class="reveal"><b id="cd-h">00</b><span>Hours</span></div>
+        <div class="reveal"><b id="cd-m">00</b><span>Minutes</span></div>
+        <div class="reveal"><b id="cd-s">00</b><span>Seconds</span></div>
+      </div>
+      <p class="cd-note reveal" id="cd-note">until the celebrations begin on Wednesday, 25 November 2026</p>
+    </section>
+
+    <!-- 5 · ALL FUNCTIONS -->
+    <section class="page schedule" data-label="Celebrations">
+      <h2 class="sec-title reveal"><small>Order of Events</small>The Celebrations</h2>
+      <ol class="fn-list">
+        <li class="fn reveal">
+          <div class="fn-date"><b>25</b><span>Nov</span></div>
+          <div class="fn-info"><h3>Lagun</h3><p>Wednesday</p></div>
+        </li>
+        <li class="fn reveal">
+          <div class="fn-date"><b>27</b><span>Nov</span></div>
+          <div class="fn-info"><h3>Mata Pujan</h3><p>Friday</p></div>
+        </li>
+        <li class="fn reveal">
+          <div class="fn-date"><b>28</b><span>Nov</span></div>
+          <div class="fn-info"><h3>Haldi &amp; Bhattaiya</h3><p>Saturday</p></div>
+        </li>
+        <li class="fn fn-main reveal">
+          <div class="fn-date"><b>29</b><span>Nov</span></div>
+          <div class="fn-info"><h3>Lagun Faldan · Engagement · Tika</h3><p>Sunday</p></div>
+        </li>
+        <li class="fn reveal">
+          <div class="fn-date"><b>30</b><span>Nov</span></div>
+          <div class="fn-info"><h3>Vidai</h3><p>Monday</p></div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- 7 · FAMILY OF THE BRIDE -->
+    <section class="page sage family-page" data-label="Family">
+      <h2 class="sec-title reveal"><small>Family of the Bride</small>With Love &amp; Blessings</h2>
+
+      <div class="fam-group reveal">
+        <p class="nb-role">Parents of the Bride</p>
+        <p class="fg-name"><small>Late Mr.</small> Ram Prakash Ojha</p>
+        <p class="fg-amp">&amp;</p>
+        <p class="fg-name"><small>Mrs.</small> Shakuntala Ojha</p>
+      </div>
+
+      <div class="rule reveal"><span></span><b></b><span></span></div>
+
+      <div class="fam-group reveal">
+        <p class="nb-role">Sister &amp; Brother-in-law</p>
+        <p class="fg-name">Renu Ojha</p>
+        <p class="fg-amp">&amp;</p>
+        <p class="fg-name">Raja Ojha</p>
+      </div>
+
+      <div class="rule reveal"><span></span><b></b><span></span></div>
+
+      <div class="fam-group reveal">
+        <p class="nb-role">Youngest Sister &amp; Brother</p>
+        <p class="fg-name">Vishakha Ojha</p>
+        <p class="fg-amp">&amp;</p>
+        <p class="fg-name">Akash Ojha</p>
+      </div>
+    </section>
+
+    <!-- 9 · THANK YOU -->
+    <section class="page dark footer" data-label="Thank You">
+      <p class="kicker reveal">Your presence is the greatest gift</p>
+      <h2 class="ft-names reveal">Pinky <em>&amp;</em> Shivam</h2>
+      <div class="rule reveal"><span></span><b></b><span></span></div>
+      <p class="hero-date reveal">25 — 30 November 2026</p>
+      <p class="ty-msg reveal">We would be honoured to have you with us as two hearts begin a beautiful journey together. Your love and blessings mean the world to us.</p>
+      <div class="ty-from reveal">
+        <p class="ty-label">With best compliments from</p>
+        <p class="ty-names">Mrs. Shakuntala Ojha &amp; Family</p>
+        <p class="ty-sub">Renu &amp; Raja Ojha<br>Vishakha Ojha · Akash Ojha</p>
+      </div>
+      <p class="ty-tag reveal">#PinkyWedsShivam</p>
+    </section>
+
+    <!-- 6 · VENUES -->
+    <section class="page paper venue-page" data-label="Venues">
+      <h2 class="sec-title reveal"><small>Where to Find Us</small>The Venues</h2>
+      <div class="names">
+          <div class="nb venue reveal">
+            <svg class="venue-icon" viewBox="0 0 40 40" aria-hidden="true"><path d="M6 19 L20 7 L34 19 M10 16 V33 H30 V16 M17 33 V24 H23 V33"/></svg>
+            <p class="nb-role">The Residence</p>
+            <p class="venue-addr">Rama Ji Ka Pura, A.B. Road,<br>Lashkar, Gwalior, Madhya Pradesh</p>
+            <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=26.21671568923995,78.146105911795" target="_blank" rel="noopener">Get Directions</a>
+          </div>
+          <div class="nb venue reveal">
+            <svg class="venue-icon" viewBox="0 0 40 40" aria-hidden="true"><path d="M6 33 H34 M9 33 V18 M31 33 V18 M15 33 V18 M25 33 V18 M5 18 H35 M7 18 Q20 4 33 18"/></svg>
+            <p class="nb-role">The Resort</p>
+            <p class="venue-addr">Shivpuri Link Road,<br>Gwalior, Madhya Pradesh</p>
+            <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=26.162485618288844,78.16739355268366" target="_blank" rel="noopener">Get Directions</a>
+          </div>
+      </div>
+      <div class="contact reveal">
+        <p class="contact-title">For any queries, please call</p>
+        <div class="contact-btns">
+          <a class="call-btn" href="tel:+919669435054"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>+91 96694 35054</a>
+          <a class="call-btn" href="tel:+918982045893"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>+91 89820 45893</a>
+        </div>
+      </div>
+      <button class="share-btn reveal" id="shareBtn">Share Invitation</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
