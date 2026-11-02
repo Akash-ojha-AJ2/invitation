@@ -1,5 +1,5 @@
 /* =========================================================
-   Pinky & Shivam · Shubh Vivah
+   Pinky weds Shivam · Shubh Vivah
    ========================================================= */
 (() => {
   const body = document.body;
@@ -283,7 +283,7 @@
   /* ---------- Share ---------- */
   document.getElementById('shareBtn').addEventListener('click', async () => {
     const data = {
-      title: 'Pinky & Shivam · Shubh Vivah',
+      title: 'Pinky weds Shivam · Shubh Vivah',
       text: 'You are cordially invited to the wedding celebrations of Pinky & Shivam · 28–30 November 2026',
       url: location.href,
     };
